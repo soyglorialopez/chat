@@ -1,0 +1,21 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='http://localhost:3000/app/main.css')
+  title Chat
+#chat-continer
+   #chat-window
+     #output
+        each item in result
+          p= item.user + ':' + item.msg
+     #actions
+     form(method="POST" action="/msg/send")
+      #id
+        input(name='id', value= id)
+      input#user(type='text' name='user' placeholder='User')
+      input#message(type='text'  name='message' placeholder='Message')
+      button#Send Send
+//-  el cliente necesita conectarse con el websocket
+script(src="/socket.io/socket.io.js" charset='utf-8')
+script(src='http://localhost:3000/app/chat.js')

@@ -1,0 +1,13 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='http://localhost:3000/app/main.css')
+  title Chat
+
+#chat-continer
+  h1 AGREGUE NUEVO CONTACTO
+      form(method='POST' action='/user/add/')
+          .form-group
+            input(type='text' name='nameUser' placeholder='Ingrese el su nombre')
+            button#Send(type='submit') Send
